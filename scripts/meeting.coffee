@@ -7,3 +7,9 @@ module.exports = (robot) ->
     envelope = room: process.env.HUBOT_CHATWORK_ROOMS
     robot.send envelope, "おはようございます、朝会の時間です。"
   ).start()
+
+module.exports = (robot) ->
+  new cronJob('0 0 * * * *', () =>
+    envelope = room: process.env.HUBOT_CHATWORK_ROOMS
+    robot.send envelope, "時間です。"
+  ).start()
