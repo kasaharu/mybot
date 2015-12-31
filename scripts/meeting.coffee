@@ -8,7 +8,6 @@ module.exports = (robot) ->
     robot.send envelope, "おはようございます、朝会の時間です。"
   ).start()
 
-module.exports = (robot) ->
   new cronJob('0 0 * * * *', () =>
     date     = new Date()
     hour     = date.getHours()
